@@ -554,37 +554,55 @@
     <div class="posts-grid">
 
       <!-- Featured -->
-      <a class="post-card featured fade-up" href="./ValenFind/">
+      <a class="post-card featured fade-up" href="./redbull/">
         <div class="featured-left">
           <div class="card-tags">
-            <span class="tag tag-red">OSINT</span>
-            <span class="tag tag-blue">Web</span>
-            <span class="tag tag-green">Research</span>
+            <span class="tag tag-red">IDOR</span>
+            <span class="tag tag-blue">Broken Access Control</span>
+            <span class="tag tag-green">Bug Bounty</span>
           </div>
-          <div class="card-title">ValenFind — OSINT Research & Deep-Dive</div>
+          <div class="card-title">The Slot That Took Any Number — IDOR in Red Bull's Vending API</div>
           <div class="card-excerpt">
-            Detailed CTF writeup covering path traversal, source disclosure, hardcoded API keys, and full database exfiltration in the ValenFind challenge.
+            An unauthenticated endpoint let anyone create or overwrite any vending machine record in production by changing a single integer — no login, no token, no ownership check.
           </div>
           <div class="card-footer">
-            <span class="card-meta">2026 · 12 min read</span>
+            <span class="card-meta">2026 · 7 min read</span>
             <span class="card-arrow">read more →</span>
           </div>
         </div>
         <div class="featured-right">
           <div class="code-preview">
-            <div class="code-line"><span class="ln">1</span><span class="cm"># valenfind.py</span></div>
-            <div class="code-line"><span class="ln">2</span><span class="kw">import</span> requests, re</div>
-            <div class="code-line"><span class="ln">3</span>&nbsp;</div>
-            <div class="code-line"><span class="ln">4</span><span class="kw">def</span> <span class="fn">enumerate_target</span>(url):</div>
-            <div class="code-line"><span class="ln">5</span>&nbsp;&nbsp;<span class="st">"scrape &amp; correlate"</span></div>
-            <div class="code-line"><span class="ln">6</span>&nbsp;&nbsp;resp = requests.<span class="fn">get</span>(url)</div>
-            <div class="code-line"><span class="ln">7</span>&nbsp;&nbsp;<span class="kw">return</span> re.<span class="fn">findall</span>(<span class="op">pattern</span>, resp)</div>
+            <div class="code-line"><span class="ln">1</span><span class="cm"># saveVending.poc.js</span></div>
+            <div class="code-line"><span class="ln">2</span><span class="fn">fetch</span>(<span class="st">'/saveVending'</span>, {</div>
+            <div class="code-line"><span class="ln">3</span>&nbsp;&nbsp;method: <span class="st">'POST'</span>,</div>
+            <div class="code-line"><span class="ln">4</span>&nbsp;&nbsp;body: <span class="kw">new</span> URLSearchParams({</div>
+            <div class="code-line"><span class="ln">5</span>&nbsp;&nbsp;&nbsp;&nbsp;vendingid: <span class="st">'6061'</span>, <span class="cm">// not mine</span></div>
+            <div class="code-line"><span class="ln">6</span>&nbsp;&nbsp;&nbsp;&nbsp;grossista: <span class="st">'ATTACKER'</span></div>
+            <div class="code-line"><span class="ln">7</span>&nbsp;&nbsp;})</div>
+            <div class="code-line"><span class="ln">8</span>}) <span class="op">// result: true</span></div>
           </div>
         </div>
       </a>
 
       <!-- Card 2 -->
- <a class="post-card fade-up delay-1" href="./malicious-model-rce/">
+      <a class="post-card fade-up delay-1" href="./ValenFind/">
+        <div class="card-tags">
+          <span class="tag tag-red">OSINT</span>
+          <span class="tag tag-blue">Web</span>
+          <span class="tag tag-green">Research</span>
+        </div>
+        <div class="card-title">ValenFind — OSINT Research & Deep-Dive</div>
+        <div class="card-excerpt">
+          Detailed CTF writeup covering path traversal, source disclosure, hardcoded API keys, and full database exfiltration in the ValenFind challenge.
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">2026 · 12 min read</span>
+          <span class="card-arrow">read more →</span>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+ <a class="post-card fade-up delay-2" href="./malicious-model-rce/">
   <div class="card-tags">
     <span class="tag tag-orange">Python</span>
     <span class="tag tag-red">RCE</span>
@@ -600,8 +618,8 @@
   </div>
 </a>
 
-      <!-- Card 3 -->
-   <a class="post-card fade-up delay-2" href="./vercel-Hack/">
+      <!-- Card 4 -->
+   <a class="post-card fade-up delay-3" href="./vercel-Hack/">
   <div class="card-tags">
     <span class="tag tag-red">Security</span>
     <span class="tag tag-blue">Breach Analysis</span>
