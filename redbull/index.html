@@ -29,9 +29,28 @@
 
   .wrap{max-width:700px;margin:0 auto;padding:0 24px 120px;}
 
+  /* ---------- BACK LINK ---------- */
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin:24px 24px 0;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--grey);
+    text-decoration:none;
+    transition:color 0.2s, transform 0.2s;
+  }
+  .back-link:hover{
+    color:var(--alarm);
+    transform:translateX(-3px);
+  }
+
   /* ---------- MASTHEAD ---------- */
   .masthead{
-    padding:56px 24px 0;
+    padding:20px 24px 0;
     max-width:700px;margin:0 auto;
     text-align:left;
   }
@@ -317,6 +336,8 @@
 </style>
 </head>
 <body>
+
+<a href="../" class="back-link">← back to writeups</a>
 
 <div class="masthead">
   <div class="kicker">Disclosure Report — Web Security</div>
