@@ -485,6 +485,37 @@
 
     .footer-links a:hover { color: var(--accent); }
 
+    /* ── VISITOR BADGE ── */
+    .visitor-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .visitor-badge:hover {
+      border-color: var(--border-hover);
+    }
+
+    .visitor-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent2);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    .visitor-badge img {
+      height: 20px;
+      display: block;
+    }
+
     /* ── ANIMATIONS ── */
     .fade-up {
       opacity: 0;
@@ -540,7 +571,7 @@
       CTF writeups, vulnerability research, and deep-dives into<br>
       <span class="hl">web security</span> · <span class="hl">reverse engineering</span> · <span class="hl">binary exploitation</span>
     </p>
- 
+  </div>
 
   <!-- WRITEUPS -->
   <section id="writeups">
@@ -619,54 +650,54 @@
       </a>
 
       <!-- Card 3 -->
- <a class="post-card fade-up delay-2" href="./malicious-model-rce/">
-  <div class="card-tags">
-    <span class="tag tag-orange">Python</span>
-    <span class="tag tag-red">RCE</span>
-    <span class="tag tag-blue">Deserialization</span>
-  </div>
-  <div class="card-title">Pickle Deserialization RCE via torch.load()</div>
-  <div class="card-excerpt">
-    Security research on exploiting PyTorch’s torch.load() through malicious pickle deserialization, leading to remote code execution and trust boundary violations.
-  </div>
-  <div class="card-footer">
-    <span class="card-meta">2026 · 10 min read</span>
-    <span class="card-arrow">read more →</span>
-  </div>
-</a>
+      <a class="post-card fade-up delay-2" href="./malicious-model-rce/">
+        <div class="card-tags">
+          <span class="tag tag-orange">Python</span>
+          <span class="tag tag-red">RCE</span>
+          <span class="tag tag-blue">Deserialization</span>
+        </div>
+        <div class="card-title">Pickle Deserialization RCE via torch.load()</div>
+        <div class="card-excerpt">
+          Security research on exploiting PyTorch's torch.load() through malicious pickle deserialization, leading to remote code execution and trust boundary violations.
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">2026 · 10 min read</span>
+          <span class="card-arrow">read more →</span>
+        </div>
+      </a>
 
       <!-- Card 4 -->
-   <a class="post-card fade-up delay-3" href="./vercel-Hack/">
-  <div class="card-tags">
-    <span class="tag tag-red">Security</span>
-    <span class="tag tag-blue">Breach Analysis</span>
-    <span class="tag tag-purple">Supply Chain</span>
-  </div>
-  <div class="card-title">Vercel Breach — Third-Party Supply Chain Attack</div>
-  <div class="card-excerpt">
-    Analysis of the April 19 Vercel security incident where attackers gained internal access through Context.ai, a third-party AI productivity tool used by a Vercel employee.
-  </div>
-  <div class="card-footer">
-    <span class="card-meta">2026 · 8 min read</span>
-    <span class="card-arrow">read more →</span>
-  </div>
-</a>
+      <a class="post-card fade-up delay-3" href="./vercel-Hack/">
+        <div class="card-tags">
+          <span class="tag tag-red">Security</span>
+          <span class="tag tag-blue">Breach Analysis</span>
+          <span class="tag tag-purple">Supply Chain</span>
+        </div>
+        <div class="card-title">Vercel Breach — Third-Party Supply Chain Attack</div>
+        <div class="card-excerpt">
+          Analysis of the April 19 Vercel security incident where attackers gained internal access through Context.ai, a third-party AI productivity tool used by a Vercel employee.
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">2026 · 8 min read</span>
+          <span class="card-arrow">read more →</span>
+        </div>
+      </a>
 
       <a class="post-card" href="./recruit-thm/">
-  <div class="card-tags">
-    <span class="tag tag-red">Web Exploitation</span>
-    <span class="tag tag-yellow">SQLi</span>
-    <span class="tag tag-green">CTF</span>
-  </div>
-  <div class="card-title">Recruit — Full Chain CTF Writeup</div>
-  <div class="card-excerpt">
-    SSRF to LFI to hardcoded credentials to Union-based SQL injection. A clean three-vulnerability chain across a recruitment app that yields both the HR and admin flags.
-  </div>
-  <div class="card-footer">
-    <span class="card-meta">2026 · 4 min read</span>
-    <span class="card-arrow">read more →</span>
-  </div>
-</a>
+        <div class="card-tags">
+          <span class="tag tag-red">Web Exploitation</span>
+          <span class="tag tag-yellow">SQLi</span>
+          <span class="tag tag-green">CTF</span>
+        </div>
+        <div class="card-title">Recruit — Full Chain CTF Writeup</div>
+        <div class="card-excerpt">
+          SSRF to LFI to hardcoded credentials to Union-based SQL injection. A clean three-vulnerability chain across a recruitment app that yields both the HR and admin flags.
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">2026 · 4 min read</span>
+          <span class="card-arrow">read more →</span>
+        </div>
+      </a>
 
     </div>
   </section>
@@ -703,9 +734,14 @@
     <div class="footer-left">
       <strong>TimelessDebugger</strong> · Cybersecurity & Development Portfolio · © 2026
     </div>
- 
+
+    <div class="visitor-badge">
+      <img
+        src="https://visitor-badge.laobi.icu/badge?page_id=raghupathi321.raghupathi321.github.io&left_color=%23111722&right_color=%233d8ef0"
+        alt="visitor badge"
+      >
+    </div>
   </footer>
-    <img src="https://visitor-badge.laobi.icu/badge?page_id=raghupathi321.raghupathi321.github.io" alt="Visitors">
 
 </body>
 </html>
